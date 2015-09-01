@@ -96,17 +96,6 @@ if DAO_TEST:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ['MYSQL_INSTANCE_NAME'],
-            'USER': os.environ['MYSQL_USERNAME'],
-            'PASSWORD': os.environ['MYSQL_PASSWORD'],
-            'HOST': os.environ['MYSQL_PORT_3306_TCP_ADDR'],
-            'PORT': os.environ['MYSQL_PORT_3306_TCP_PORT']
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
             'NAME': 'test',
             'USER': 'root',
             'PASSWORD': '',
@@ -114,6 +103,19 @@ else:
             'PORT': '3306'
         }
     }
+
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.environ['MYSQL_INSTANCE_NAME'],
+            'USER': os.environ['MYSQL_USERNAME'],
+            'PASSWORD': os.environ['MYSQL_PASSWORD'],
+            'HOST': os.environ['MYSQL_PORT_3306_TCP_ADDR'],
+            'PORT': os.environ['MYSQL_PORT_3306_TCP_PORT']
+        }
+    }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
