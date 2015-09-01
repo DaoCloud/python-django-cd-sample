@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Item
 from redis import Redis
-
-
-redis = Redis(host='redis', port=6379)
+import os
+redis = Redis(host=os.environ['REDIS_PORT_6379_TCP_ADDR'], port=os.environ['REDIS_PORT_6379_TCP_PORT'])
 
 
 def home(request):
