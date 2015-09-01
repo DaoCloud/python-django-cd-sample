@@ -4,4 +4,5 @@ RUN pip install -r /tmp/requirements.txt
 RUN mkdir /code
 WORKDIR /code
 ADD . /code
+EXPOSE 8000
 CMD /usr/local/bin/gunicorn config.wsgi:application -w 2 -b :8000
