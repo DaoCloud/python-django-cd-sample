@@ -5,7 +5,5 @@ RUN mkdir /code
 WORKDIR /code
 ADD . /code
 EXPOSE 8000
-RUN /code/manage.py syncdb --noinput
-
 
 CMD docker-entrypoint.sh
