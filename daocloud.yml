@@ -7,8 +7,10 @@ env:
     - DAO_TEST = "True"
 
 install:
-    - pip install -r requirements.txt
     - pip install coverage
+
+before_script:
+    - pip install -r requirements.txt
 
 script:
     - coverage run --source='.' manage.py test
