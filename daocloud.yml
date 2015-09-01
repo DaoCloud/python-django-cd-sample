@@ -1,0 +1,15 @@
+image: daocloud/ci-python:2.7
+services:
+    - mysql
+    - redis
+
+env:
+    - DAO_TEST = "True"
+
+install:
+    - pip install -r requirements.txt
+    - pip install coverage
+
+script:
+    - coverage run --source='.' manage.py test
+    - coverage report

@@ -6,4 +6,4 @@ WORKDIR /code
 ADD . /code
 EXPOSE 8000
 
-CMD docker-entrypoint.sh
+CMD /code/docker-entrypoint.sh
