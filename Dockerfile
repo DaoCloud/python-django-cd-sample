@@ -5,7 +5,7 @@ RUN mkdir /code
 WORKDIR /code
 ADD . /code
 EXPOSE 8000
-RUM /code/manage.py syncdb --noinput
+RUN /code/manage.py syncdb --noinput
 
 
 CMD /usr/local/bin/gunicorn config.wsgi:application -w 2 -b :8000
