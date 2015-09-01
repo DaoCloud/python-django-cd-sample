@@ -8,4 +8,4 @@ EXPOSE 8000
 RUN /code/manage.py syncdb --noinput
 
 
-CMD /usr/local/bin/gunicorn config.wsgi:application -w 2 -b :8000
+CMD docker-entrypoint.sh
