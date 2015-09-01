@@ -5,6 +5,8 @@ services:
 
 env:
     - DAO_TEST = "True"
+    - MYSQL_INSTANCE_NAME = "test"
+    - MYSQL_PASSWORD = ""
 
 install:
     - pip install coverage
