@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-DAO_TEST = bool(os.environ['DAO_TEST'])
+DAO_TEST = bool(os.environ.get('DAO_TEST'))
 
 DATABASES = {
     'default': {

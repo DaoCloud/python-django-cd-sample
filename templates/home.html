@@ -6,9 +6,9 @@
 <div class="text-center">
   {% load staticfiles %}
   <br>
-  <img src="{% static "django.png" %}">
+  <img src="http://blog.daocloud.io/wp-content/uploads/2015/09/django.png">
   <br>
-  <p>This page has been viewed <strong>{{counter}}</strong> times!</p>
+  <p>这个页面已经被访问了 <strong>{{counter}}</strong> 次啦!｡◕‿◕｡</p>
 </div>
 
 <br>
@@ -16,9 +16,9 @@
 <form action="/" method="POST">
   {% csrf_token %}
   <div class="form-group">
-    <input name="item_text" class="form-control input-lg" type="text" placeholder="Enter a message" required>
+    <input name="item_text" class="form-control input-lg" type="text" placeholder="输入留言" required>
   </div>
-  <input type="submit" class="btn btn-success btn-lg btn-block" value="Submit">
+  <input type="submit" class="btn btn-success btn-lg btn-block" value="提交">
 </form>
 
 <br>

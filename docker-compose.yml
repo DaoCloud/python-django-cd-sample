@@ -5,10 +5,8 @@ web:
   links:
     - mysql:mysql
     - redis:redis
-  volumes:
-    - ./web:/code
   env_file: .env
-  command: /code/manage.py runserver 0.0.0.0:8000
+#  command: /code/manage.py runserver 0.0.0.0:8000
 
 mysql:
   image: mysql:latest
