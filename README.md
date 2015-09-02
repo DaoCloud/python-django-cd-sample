@@ -26,7 +26,9 @@
 
 ---
 
-第三步：为项目指定「项目名称」，项目名称只能包含英文数字、下划线 `_`、小数点 `.`、和减号 `-`，并且不能与现有项目重名. 
+第三步：为项目指定「项目名称」
+
+稍等片刻 ，应用便在云端构建成咯
 
 
 
@@ -37,6 +39,71 @@
 第一步：在控制台点击「镜像仓库」。
 
 第二步：在「代码构建」的界面中找到需要部署的镜像 ，点击「部署」。
+
+第三步：按照为项目指定「项目名称」， 并在 「基础设置」中 绑定上  mysql 和 redis 服务 。
+
+---
+
+应用便在云端航行起来咯  ｡◕‿◕｡
+
+
+
+### 云端持续集成
+
+我们需要写一些测试代码 。
+
+``` python
+# /chat/tests.py
+from django.test import TestCase
+from django.test.client import Client
+
+
+# Create your tests here.
+class ChatTests(TestCase):
+    client_class = Client
+
+    def test(self):
+        self.assertEqual(1 + 1, 2)
+
+```
+
+本地环境下可以使用以下命令来启动测试：
+
+``` 
+./manage.py test
+```
+
+
+
+当我们写完测试代码之后，我们需要一个持续集成环境来自动执行测试，报告项目的健康状况。
+
+我们只需要在源代码的根目录放置 `daocloud.yml` 文件便可以接入 DaoCloud 持续集成系统，每一次源代码的变更都会触发一次 DaoCloud 持续集成。关于 `daocloud.yml` 的格式，请参考 **这里**。
+
+daocloud.yml
+
+``` yaml
+image: daocloud/ci-python:2.7
+services:
+    - mysql
+    - redis
+    
+env:
+    - DAO_TEST = "True"
+    - MYSQL_INSTANCE_NAME = "test"
+    - MYSQL_USERNAME = "root"
+    - MYSQL_PASSWORD = ""
+    
+install:
+    - pip install coverage
+
+before_script:
+    - pip install -r requirements.txt
+
+script:
+    - coverage run --source='.' manage.py test
+    - coverage report
+
+```
 
 
 
