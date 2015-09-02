@@ -2,7 +2,7 @@
 
 > 目标：我们将之前实现的**Django + MySQL + Redis**  留言板应用 ，送上云端 ，轻松实现代码的持续集成和持续部署 。
 > 
-> 本项目代码维护在 **DaoCloud/django** 项目中 。
+> 本项目代码维护在 [DaoCloud/python-django-cd-sample](https://github.com/DaoCloud/python-django-cd-sample)项目中 。
 
 
 
@@ -86,13 +86,13 @@ image: daocloud/ci-python:2.7
 services:
     - mysql
     - redis
-    
+
 env:
     - DAO_TEST = "True"
     - MYSQL_INSTANCE_NAME = "test"
     - MYSQL_USERNAME = "root"
     - MYSQL_PASSWORD = ""
-    
+
 install:
     - pip install coverage
 
@@ -104,14 +104,4 @@ script:
     - coverage report
 
 ```
-
-
-
-
-
-
-
-
-
-
 
