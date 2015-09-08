@@ -1,12 +1,12 @@
-## 如何开发一个 Django 的生产级 Docker 化应用
+## 如何构建具有持续交付能力的 Docker 化 Django 应用
 
-> 目标：我们将之前实现的 **Django + MySQL + Redis** 留言板应用，送上云端，轻松实现代码的持续集成和持续部署。
+> 目标：我们将之前实现的 **Django + MySQL + Redis** 留言板应用，送上云端，轻松实现应用在云端持续交付。
 > 
 > 本项目代码维护在 [DaoCloud/python-django-cd-sample](https://github.com/DaoCloud/python-django-cd-sample) 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 
-工欲善其器，必先利其器。首先，你需要 **DaoCloud 帐号** **DaoCloud 帐号** **DaoCloud 帐号**。
+工欲善其器，必先利其器。首先，你需要 **[DaoCloud 帐号](https://www.daocloud.io/)**。
 
 #### 云端镜像构建
 
@@ -60,7 +60,7 @@ class ChatTests(TestCase):
 
 当我们写完测试代码之后，我们需要一个持续集成环境来自动执行测试，报告项目的健康状况。
 
-我们只需要在源代码的根目录放置 `daocloud.yml` 文件便可以接入 DaoCloud 持续集成系统，每一次源代码的变更都会触发一次 DaoCloud 持续集成。关于 `daocloud.yml` 的格式，您可以参考**这里**。
+我们只需要在源代码的根目录放置 `daocloud.yml` 文件便可以接入 DaoCloud 持续集成系统，每一次源代码的变更都会触发一次 DaoCloud 持续集成。关于 `daocloud.yml` 的格式，您可以参考 **[这里](https://help.daocloud.io/features/continuous-integration/daocloud-yml.html)**。
 
 *daocloud.yml*
 
