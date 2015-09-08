@@ -4,7 +4,7 @@
 > 
 > 本项目代码维护在 [DaoCloud/python-django-cd-sample](https://github.com/DaoCloud/python-django-cd-sample) 项目中。
 >
-> 您可以在 GitHub 找到本项目并获取本文中所提到的所有脚本文件。
+> 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 
 工欲善其器，必先利其器。首先，你需要 **DaoCloud 帐号** **DaoCloud 帐号** **DaoCloud 帐号**。
 
