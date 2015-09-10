@@ -2,7 +2,7 @@
 
 > 目标：我们将之前实现的 **Django + MySQL + Redis** 留言板应用，送上云端，轻松实现应用在云端持续交付。
 > 
-> 本项目代码维护在 [DaoCloud/python-django-cd-sample](https://github.com/DaoCloud/python-django-cd-sample) 项目中。
+> 本项目代码维护在 **[DaoCloud/python-django-cd-sample](https://github.com/DaoCloud/python-django-cd-sample)** 项目中。
 >
 > 您可以在 GitHub 找到本项目并获取本文中所提到的所有代码文件。
 
