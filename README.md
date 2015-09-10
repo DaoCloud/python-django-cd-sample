@@ -12,24 +12,24 @@
 
 > 比起本地创建，在云端创建会更简单。
 
-- 第一步：在控制台点击「代码构建」。
+* 第一步：在控制台点击「代码构建」。
 
 ![](http://help.daocloud.io/img/screenshots/features/build-flows/dashboard.png)
 
-- 第二步：在「代码构建」的界面中点击「创建新项目」。
+* 第二步：在「代码构建」的界面中点击「创建新项目」。
 
 ![](http://help.daocloud.io/img/screenshots/features/build-flows/build-flows-index.png)
 
-- 第三步：为项目指定「项目名称」并设置代码源。
+* 第三步：为项目指定「项目名称」并设置代码源。
 
 点击「开始创建」后稍等片刻，您的应用便在云端构建成咯。
 
 #### 云端部署镜像
 
-- 第零步：在控制台点击「服务集成」，创建 MySQL 和 Redis 服务
-- 第一步：在控制台点击「镜像仓库」。
-- 第二步：在「代码构建」的界面中找到需要部署的镜像，点击「部署」。
-- 第三步：按照为项目指定「项目名称」，并在 「基础设置」中绑定上 MySQL 和 Redis 服务。
+* 第零步：在控制台点击「服务集成」，创建 MySQL 和 Redis 服务
+* 第一步：在控制台点击「镜像仓库」。
+* 第二步：在「代码构建」的界面中找到需要部署的镜像，点击「部署」。
+* 第三步：按照为项目指定「项目名称」，并在 「基础设置」中绑定上 MySQL 和 Redis 服务。
 
 如果没有意外的话，您的应用便在云端航行起来咯！｡◕‿◕｡
 
@@ -37,11 +37,10 @@
 
 首先我们需要编写一些测试代码。
 
-``` python
-# /chat/tests.py
+```python
+# chat/tests.py
 from django.test import TestCase
 from django.test.client import Client
-
 
 # Create your tests here.
 class ChatTests(TestCase):
@@ -49,12 +48,11 @@ class ChatTests(TestCase):
 
     def test(self):
         self.assertEqual(1 + 1, 2)
-
 ```
 
 本地环境下可以使用以下命令来启动测试：
 
-``` bash
+```bash
 ./manage.py test
 ```
 
@@ -64,7 +62,7 @@ class ChatTests(TestCase):
 
 *daocloud.yml*
 
-``` yaml
+```yaml
 image: daocloud/ci-python:2.7
 services:
     - mysql
